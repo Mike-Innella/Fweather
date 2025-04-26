@@ -69,6 +69,7 @@
   position: absolute;
   bottom: -8px;
   width: 100%;
+  left: 0;
   height: 2px;
   background-color: #3c4aeb;
 }
