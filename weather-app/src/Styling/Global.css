@@ -24,6 +24,14 @@ body {
   padding-bottom: 200px; /* Add padding to account for fixed footer */
 }
 
+.color-text {
+  color: #3c4aeb;
+}
+
+.dark-theme .color-text {
+  color: #eb3c3c;
+}
+
 /* Layout Styles */
 .container {
   width: 100%;
@@ -74,6 +82,7 @@ h3 {
 .dark-theme {
   background-color: #333;
   color: #f5f5f5;
+  overflow: hidden;
 }
 
 .dark-theme * {

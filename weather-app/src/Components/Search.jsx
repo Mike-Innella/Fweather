@@ -21,13 +21,18 @@ const Search = ({
       setOverlayVisible(true); // Show overlay while fetching
 
       try {
-        const data = await fetchWeather(city, "metric", setLoading, setOverlayVisible);
+        const data = await fetchWeather(
+          city,
+          "metric",
+          setLoading,
+          setOverlayVisible
+        );
         setWeatherData(data); // Set fetched weather data
       } catch (error) {
         console.error(error);
         setError("Failed to fetch weather data.");
       }
-      
+
       setCity(""); // Reset input field after submission
     }
   };

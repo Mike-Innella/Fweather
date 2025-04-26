@@ -38,10 +38,12 @@
   filter: invert(1);
 }
 
-.header__title h1 {
-  font-size: 40px;
-  font-weight: bold;
-  color: #333;
+.header__title {
+  h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: #333;
+  }
 }
 
 /* Navigation styling */

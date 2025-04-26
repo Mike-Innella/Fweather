@@ -14,10 +14,16 @@ const Header = ({ onAboutClick, onContactClick, onToggleTheme }) => {
     <header className="header" id="header">
       <div className="header__wrapper">
         <div className="header__logo">
-          <img src={require("../assets/Logo Black.PNG")} alt="Fweather Logo" className="logo" />
+          <img
+            src={require("../assets/Logo Black.PNG")}
+            alt="Fweather Logo"
+            className="logo"
+          />
         </div>
         <div className="header__title">
-          <h1>Fweather</h1>
+          <h1>
+            <span className="color-text">F </span>w e a t h e r
+          </h1>
         </div>
 
         <nav className="nav">

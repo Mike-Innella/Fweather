@@ -1,3 +1,4 @@
+/* Updated for mobile single-column layout at <=768px - 4/26/2025 */
 /* Media Queries - Reusable Breakpoints */
 @media (max-width: 1280px) {
   .header__wrapper {
@@ -27,8 +28,20 @@
   }
 }
 
-/* Reusable Mobile Fullscreen Styles (Applied to Weather/Tabs/Modals) */
+/* Single Column Layout for Mobile Devices */
 @media (max-width: 768px) {
+  /* Global Single Column Layout Rules */
+  .container {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
   /* Shared Fullscreen Rules */
   .weather__result,
   .modal.modal__about,
@@ -41,14 +54,32 @@
     padding: 0 !important;
   }
 
-  /* Header/Burger */
-  #headerTitle {
-    font-size: 40px;
+  /* Header/Burger - Single Column Layout */
+  .header {
+    padding: 8px 0;
   }
 
   .header__wrapper {
     padding: 16px;
     width: 100%;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .header__logo {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .header__title h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  #navList {
+    width: 100%;
+    justify-content: center;
   }
 
   /* Nav */
@@ -74,102 +105,197 @@
   .burgerBtn {
     display: flex;
     font-size: 28px;
+    margin-right: 12px;
   }
 
-  /* Weather Card */
+  /* Search Section - Single Column Layout */
+  .search-section {
+    height: auto;
+  }
+
+  .search__wrapper {
+    margin-top: 64px;
+    width: 100%;
+  }
+
+  .search__wrapper h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .search__bar {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 24px;
+  }
+
+  .search__bar form {
+    max-width: 100%;
+  }
+
+  .search__bar input {
+    font-size: 18px;
+  }
+
+  .search__submit {
+    margin: 4px 0;
+  }
+
+  .search__submit i {
+    font-size: 24px;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+  }
+
+  /* Auto Locate - Single Column Layout */
+  .locate__wrap {
+    padding: 16px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  .autoLocateBtn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .autoLocateBtn i {
+    font-size: 28px;
+  }
+
+  .locate__text {
+    width: 160px;
+    font-size: 16px;
+  }
+
+  /* Weather Card - Single Column Layout */
   .weather__result {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px !important;
+    padding: 16px !important;
     min-height: 100vh !important;
     height: auto !important;
     overflow-y: auto;
     justify-content: flex-start;
+    margin: 0 !important;
+    box-shadow: none !important;
   }
 
   .weather__content {
     display: flex;
     flex-direction: column !important;
     width: 100% !important;
-    padding: 0 16px;
+    padding: 0 auto;
+    margin: 0 auto;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
+    margin: 0 auto;
   }
 
   .weather__result h3 {
-    font-size: 28px;
-    margin-bottom: 16px;
+    font-size: 24px;
+    margin-bottom: 0;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 320px;
   }
 
   .weather__result p {
-    font-size: 18px;
-    margin: 6px 0;
-    justify-content: center;
+    font-size: 16px;
+    margin: 4px 0;
+    padding: 8px;
+    justify-content: flex-start;
     text-align: left;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   .weather__result button {
     font-size: 18px;
-    margin: 16px auto 0;
-    padding: 10px 16px;
+    margin: 8px auto;
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 8px;
   }
 
-  /* Tabs */
+  /* Tabs - Single Column Layout */
   .tabs {
-    position: static;
+    position: fixed;
     display: flex;
-    flex-direction: column;
+    flex-direction: row !important;
     justify-content: center;
     width: 100%;
-    margin: 16px 0;
-    gap: 12px;
+    margin: 0;
+    gap: 0;
     transform: none;
     height: auto;
     top: 0;
-    right: 0;
-    order: 10;
+    left: 29%;
+    order: 2;
+    max-width: 320px;
+    flex-wrap: nowrap;
   }
 
   .tab {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    font-size: 16px;
-    padding: 10px 16px;
-    background-color: #3c4aeb;
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    font-size: 12px;
+    padding: 8px 4px;
+    background-color: #666666;
     color: #ffffff;
-    border-radius: 8px;
+    border-radius: 0;
     border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+    transition: all 300ms ease;
   }
 
   .tab.active {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(41, 128, 185, 0.3);
+    background-color: #3498db;
+    transform: none;
+    box-shadow: none;
+    font-weight: bold;
   }
 
   .tab-content {
     width: 100%;
-    margin: 16px 0;
-    margin-right: 0;
-    order: 5;
+    position: fixed;
+    margin: 0 auto;
+    padding: 0 auto;
+    bottom: 176px;
+    left: 29%;
+    order: 3;
+    background-color: transparent;
   }
 
   .tab-content-inner {
-    padding: 16px;
+    padding: 8px 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
-  /* Modals */
-  .moda,
+  .close-weather {
+    position: fixed;
+    bottom: 48px;
+  }
+
+  /* Modals - Single Column Layout */
+  .modal__wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal,
   .modal-content {
     position: fixed;
     justify-content: center;
@@ -179,6 +305,30 @@
     padding: 0;
     margin: 0 !important;
     gap: 0 !important;
+  }
+
+  .modal-content {
+    padding: 48px 16px 16px !important;
+    overflow-y: auto;
+  }
+
+  .about-features,
+  .about-developers {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-features ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+
+  .about-features li {
+    text-align: center;
+  }
+
+  .about-developers p {
+    text-align: center;
   }
 
   .modal-content p {
@@ -191,9 +341,11 @@
     top: 16px;
   }
 
-  /* Contact Form */
+  /* Contact Form - Single Column Layout */
   .modal__contact form {
-    width: 90%;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
     font-size: 16px;
   }
 
@@ -211,20 +363,20 @@
 
   /* Weather specific improvements */
   .weather__result .unit__toggle {
-    width: auto;
-    min-width: 200px;
-    padding: 8px 16px;
-    font-size: 16px;
-    margin-top: 20px;
+    display: none; /* Hide the unit toggle button as it's not in the screenshot */
   }
 
   .weather__result .close-weather {
-    width: auto;
-    min-width: 200px;
+    width: 100%;
+    max-width: 320px;
     font-size: 16px;
-    padding: 10px 20px;
-    margin-top: 24px;
-    order: 20;
+    padding: 12px 20px;
+    margin: 16px auto 24px;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    order: 4;
   }
 
   /* Reorder content for mobile */
@@ -237,86 +389,152 @@
     gap: 16px;
   }
 
+  /* Footer - Single Column Layout */
+  .footer {
+    padding: 24px 0 16px;
+  }
+
+  .footer__container {
+    padding: 0 16px;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__section {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .footer__section h3 {
+    display: block;
+    text-align: center;
+    margin: 0 auto 16px;
+  }
+
+  .footer__section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
   /* Set order for elements in weather content */
   .weather__content h3 {
     order: 1;
-  }
-
-  .weather__content .tab-content {
-    order: 2;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
   }
 
   .weather__content .tabs {
+    order: 2;
+  }
+
+  .weather__content .tab-content {
     order: 3;
-    margin-top: 20px;
   }
 
   .weather__content .close-weather {
     order: 4;
-    margin-top: 20px;
   }
 
   /* Override any conflicting styles */
   .weather__content > * {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
   }
 
-  /* Force the tabs to be vertical and styled like buttons */
+  /* Force the tabs to be horizontal and styled like tabs */
   .weather__content .tabs {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
     width: 100% !important;
-    max-width: 300px !important;
-    gap: 10px !important;
-    margin: 20px 0 !important;
+    max-width: 320px !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    flex-wrap: nowrap !important;
   }
 
   .weather__content .tab {
-    width: 100% !important;
-    max-width: 300px !important;
-    margin: 0 auto !important;
-    padding: 12px 16px !important;
-    background-color: #3c4aeb !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 8px 4px !important;
+    background-color: #666666 !important;
     color: #ffffff !important;
-    border-radius: 8px !important;
+    border-radius: 0 !important;
     text-align: center !important;
     font-weight: 600 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: none !important;
+    font-size: 12px !important;
   }
 
   .weather__content .tab.active {
-    background-color: #2980b9 !important;
-    transform: translateY(-2px) !important;
+    background-color: #3498db !important;
+    transform: none !important;
+    box-shadow: none !important;
   }
 
   .weather-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+
+  /* Align weather data text */
+  .weather__result p {
+    display: flex;
+    align-items: center;
   }
 }
 
 /* Smaller Mobile Screens */
 @media (max-width: 480px) {
-  #headerTitle {
+  /* Header */
+  .header__title h1 {
     font-size: 24px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  /* Search */
+  .search__wrapper {
+    margin-top: 48px;
   }
 
   .search__wrapper h2 {
     font-size: 24px;
   }
 
-  .modal-content {
-    padding: 40px 16px;
+  .search__bar {
+    max-width: 260px;
   }
 
-  .modal-content p {
-    font-size: 18px;
+  /* Weather */
+  .weather__content {
+    width: 100%;
   }
 
   .weather__result h3 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .weather__result p {
@@ -327,27 +545,142 @@
     font-size: 16px;
   }
 
+  .tab-content {
+    left: 25%;
+    bottom: 128px;
+    width: 100%;
+  }
+
+  .tab-content-inner {
+    p {
+      font-size: 16px !important;
+    }
+  }
+
+  .tabs {
+    top: 128px !important;
+    left: 17%;
+  }
+
+  /* Modals */
+  .modal-content {
+    padding: 40px 16px 16px !important;
+  }
+
+  .modal-content h2 {
+    font-size: 28px;
+  }
+
+  .modal-content p {
+    font-size: 18px;
+  }
+
+  .modal-content h3 {
+    font-size: 20px;
+  }
+
+  .close {
+    font-size: 48px;
+    top: 8px;
+    right: 8px;
+  }
+
+  /* Navigation */
   .nav__link {
+    font-size: 24px;
+  }
+
+  /* Auto Locate */
+  .autoLocateBtn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .autoLocateBtn i {
     font-size: 24px;
   }
 }
 
 @media (max-width: 400px) {
-  .modal-content {
-    padding: 32px 12px;
+  /* Header */
+  .header__title h1 {
+    font-size: 20px;
   }
 
+  .logo {
+    height: 36px;
+  }
+
+  /* Search */
+  .search__wrapper h2 {
+    font-size: 20px;
+  }
+
+  .search__bar {
+    max-width: 240px;
+  }
+
+  .search__bar input {
+    font-size: 16px;
+  }
+
+  /* Weather */
   .weather__result h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .weather__result p {
     font-size: 14px;
   }
 
+  /* Tabs */
   .tab {
     flex: 1 1 100%;
     font-size: 12px;
-    padding: 6px 10px;
+    padding: 4px 8px;
+    height: auto;
+  }
+
+  .tabs {
+    left: 9%;
+  }
+
+  /* Modals */
+  .modal-content {
+    padding: 32px 12px 12px !important;
+  }
+
+  .modal-content h2 {
+    font-size: 24px;
+  }
+
+  .modal-content p {
+    font-size: 16px;
+  }
+
+  .about-features li {
+    font-size: 14px;
+  }
+
+  .close {
+    font-size: 36px;
+    top: 4px;
+    right: 4px;
+  }
+
+  /* Footer */
+  .footer__section h3 {
+    font-size: 20px;
+  }
+
+  .footer__section p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .tabs {
+    left: 5%;
+    top: 96px !important;
   }
 }
