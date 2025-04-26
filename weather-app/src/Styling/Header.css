@@ -1,0 +1,198 @@
+/* Header Styles */
+
+/* Basic styles for the header */
+.header {
+  background-color: #ebdcdc;
+  width: 100vw;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 16px 64px;
+}
+
+/* Logo styling */
+.header__logo {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  transition: all 400ms ease;
+}
+
+.logo:hover {
+  transform: scale(1.04);
+}
+
+.dark-theme .logo {
+  filter: invert(1);
+}
+
+.header__title h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Navigation styling */
+.nav__link {
+  padding: 8px;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0 72px;
+  position: relative;
+  transition: color 400ms ease;
+}
+
+.nav__link::before,
+.nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #3c4aeb;
+  transition: width 400ms ease;
+}
+
+.nav__link::before {
+  left: 0;
+}
+.nav__link::after {
+  right: 0;
+}
+
+.nav__link:hover {
+  color: #3c4aeb;
+  cursor: pointer;
+}
+
+.nav__link:hover::before,
+.nav__link:hover::after {
+  width: 100%;
+}
+
+/* Dark Theme Nav Link Hovers */
+.dark-theme .nav__link:hover {
+  color: #eb3c3c;
+}
+
+.dark-theme .nav__link::before,
+.dark-theme .nav__link::after {
+  background-color: #eb3c3c;
+}
+
+/* Nav Buttons */
+.contrast,
+.burgerBtn,
+.burgerClose {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+
+.contrast {
+  border-radius: 50%;
+  border: 2px solid transparent;
+  margin-left: 72px;
+  margin-right: 32px;
+}
+
+.contrast i,
+.burgerBtn i {
+  font-size: 28px;
+}
+
+.contrast:hover,
+.burgerBtn:hover {
+  transform: scale(0.8);
+}
+
+.contrast:hover i {
+  color: #3c4aeb;
+}
+
+.contrast:active,
+.burgerBtn:active,
+.burgerClose:active {
+  transform: scale(1.2);
+}
+
+/* BURGER */
+.burgerBtn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hide on larger screens */
+}
+
+/* Burger Menu */
+.burgerBtn {
+  display: none; /* Hidden by default on desktop */
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Menu Styles */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 400ms ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu--open {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.burgerClose {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 48px;
+  font-weight: 900;
+  color: #969696;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burgerClose:hover {
+  color: #eb3c3c;
+}
+
+.nav__list--burger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}

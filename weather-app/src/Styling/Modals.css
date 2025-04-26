@@ -1,0 +1,239 @@
+/* Modal Styles */
+
+/* Modals & Background*/
+.modal__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #030303b7;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+}
+
+.modal__background.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modals */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  width: 100%;
+  max-width: 480px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 400ms ease;
+}
+
+/* Specific modal variants (off-screen starting positions) */
+.modal__about {
+  transform: translate(-150%, -50%);
+}
+
+.modal__contact {
+  transform: translate(150%, -50%);
+}
+
+/* Show State */
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%);
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #fefefe;
+  padding: 48px;
+  border: 2px solid #969696;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px #00000033;
+}
+
+.modal-content p {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.modal-content h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.modal-content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.about-features, .about-developers {
+  margin-top: 16px;
+}
+
+.about-features ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.about-features li {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.about-developers p {
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+/* Modal Contact */
+.modal__contact .modal-content {
+  flex-direction: column;
+}
+
+.modal__contact form {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.modal__contact input,
+.modal__contact textarea {
+  margin: 12px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #3c4aeb;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px #4e4e4e;
+  outline: none;
+  resize: none;
+}
+
+.modal__contact input:hover,
+.modal__contact textarea:hover {
+  border-color: #969696;
+}
+
+.modal__contact input:focus-within,
+.modal__contact textarea:focus-within {
+  border-color: #3c4aeb;
+}
+
+.modal__contact button {
+  font-size: 28px;
+  font-weight: 700;
+  background-color: #4e4e4e;
+  color: #f5f5f5;
+  border: solid 2px #969696;
+  border-radius: 8px;
+  padding: 12px 0;
+  transition: all 400ms ease;
+}
+
+.modal__contact button:hover {
+  background-color: #3c4aeb;
+  transform: scale(1.05);
+}
+
+.modal__contact button:active {
+  background-color: #eb3c3c;
+  transform: scale(0.95);
+  color: #4e4e4e;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 72px;
+  font-weight: 900;
+  padding: 0 12px 12px 12px;
+  color: #4e4e4e;
+  z-index: 100;
+}
+
+.close:hover {
+  color: #000;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Overlays */
+.modal__overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  display: block;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 400ms ease;
+  color: #f5f5f5;
+}
+
+.overlay--loading,
+.overlay--success {
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 32px;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 0 auto;
+  transition: opacity 400ms ease;
+}
+
+.overlay--loading {
+  background-color: #3c4aeb;
+  z-index: 51;
+}
+
+.overlay--loading .spinner {
+  font-size: 128px;
+  animation: spin 1200ms linear infinite;
+  color: #f5f5f5;
+}
+
+.overlay--success {
+  background-color: #07831c;
+}
+
+.overlay--loading.hidden,
+.overlay--success.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 400ms ease;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

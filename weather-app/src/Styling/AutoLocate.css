@@ -1,0 +1,137 @@
+/* Auto Location Wrapper */
+.locate__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  width: 100%;
+  position: relative;
+}
+
+/* Base Button Styles */
+.autoLocateBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8eafc;
+  border: 2px solid #c0c4f6;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  transition: all 400ms ease;
+  box-shadow: 0 4px 8px #00000026;
+}
+
+.autoLocateBtn i {
+  font-size: 36px;
+  color: #3c4aeb;
+  transition: all 400ms ease;
+}
+
+.dark-theme .autoLocateBtn {
+  background-color: #e6f0f7;
+  border-color: #c0d8e8;
+}
+
+.dark-theme .autoLocateBtn i {
+  color: #2980b9;
+}
+
+/* Hover Effects */
+.autoLocateBtn:hover {
+  background-color: #d0d4f8;
+  border-color: #8c93f0;
+  box-shadow: 0 6px 12px #00000033;
+  transform: translateY(-4px);
+}
+
+.autoLocateBtn:hover i {
+  animation: spin 400ms 100ms ease-in-out;
+  color: #3c4aeb;
+}
+
+/* Dark Theme Hover */
+.dark-theme .autoLocateBtn:hover {
+  background-color: #c0d8e8;
+  border-color: #6baad1;
+}
+
+.dark-theme .autoLocateBtn:hover i {
+  color: #2980b9;
+}
+
+/* Active State */
+.autoLocateBtn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.autoLocateBtn:active i,
+.dark-theme .autoLocateBtn:active i {
+  transform: scale(0.95);
+  color: #969696;
+}
+
+/* Locate Text (Hidden by default) */
+.locate__text {
+  width: 200px;
+  opacity: 0;
+  left: 100%;
+  transform: translateX(0);
+  transition: all 400ms ease;
+  font-size: 18px;
+  font-weight: 600;
+  position: absolute;
+  pointer-events: none;
+  background-color: #e8eafc;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px #0000001a;
+  color: #3c4aeb;
+}
+
+/* Reveal on Hover */
+.autoLocateBtn:hover .locate__text {
+  opacity: 1;
+  transform: translateX(16px);
+}
+
+.dark-theme .locate__text {
+  background-color: #e6f0f7;
+  color: #2980b9;
+}
+
+/* Loading Text Styling */
+.loading-text {
+  color: #ffcc00;
+  margin-left: 8px;
+}
+
+/* Error Text Styling */
+.error-text {
+  color: #ff0000;
+  margin-left: 8px;
+}
+
+/* Loading and Error Text (Hidden by default) */
+.loading-text,
+.error-text {
+  width: 256px;
+  opacity: 0;
+  right: 150%;
+  transform: translateX(0);
+  transition: all 400ms ease;
+  font-size: 32px;
+  font-weight: 900;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Reveal Loading Text */
+.autoLocateBtn .error-text,
+.autoLocateBtn .loading-text {
+  opacity: 1;
+  transform: translateX(-32px);
+}

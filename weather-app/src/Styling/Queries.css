@@ -1,0 +1,353 @@
+/* Media Queries - Reusable Breakpoints */
+@media (max-width: 1280px) {
+  .header__wrapper {
+    width: 100vw;
+    padding: 32px;
+    justify-content: space-between;
+  }
+
+  .search__wrapper h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header__wrapper {
+    padding: 24px;
+  }
+
+  .search__wrapper h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header__wrapper {
+    width: 100%;
+  }
+}
+
+/* Reusable Mobile Fullscreen Styles (Applied to Weather/Tabs/Modals) */
+@media (max-width: 768px) {
+  /* Shared Fullscreen Rules */
+  .weather__result,
+  .modal.modal__about,
+  .modal.modal__contact {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Header/Burger */
+  #headerTitle {
+    font-size: 40px;
+  }
+
+  .header__wrapper {
+    padding: 16px;
+    width: 100%;
+  }
+
+  /* Nav */
+  .nav__list {
+    display: none;
+  }
+
+  .nav__list--burger {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  .nav__link,
+  .burgerClose {
+    font-size: 64px;
+  }
+
+  .contrast {
+    margin-right: 72px;
+  }
+
+  .burgerBtn {
+    display: flex;
+    font-size: 28px;
+  }
+
+  /* Weather Card */
+  .weather__result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow-y: auto;
+    justify-content: flex-start;
+  }
+
+  .weather__content {
+    display: flex;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 0 16px;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .weather__result h3 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .weather__result p {
+    font-size: 18px;
+    margin: 6px 0;
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .weather__result button {
+    font-size: 18px;
+    margin: 16px auto 0;
+    padding: 10px 16px;
+  }
+
+  /* Tabs */
+  .tabs {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 16px 0;
+    gap: 12px;
+    transform: none;
+    height: auto;
+    top: 0;
+    right: 0;
+    order: 10;
+  }
+
+  .tab {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 10px 16px;
+    background-color: #3c4aeb;
+    color: #ffffff;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .tab.active {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(41, 128, 185, 0.3);
+  }
+
+  .tab-content {
+    width: 100%;
+    margin: 16px 0;
+    margin-right: 0;
+    order: 5;
+  }
+
+  .tab-content-inner {
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Modals */
+  .moda,
+  .modal-content {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+
+  .modal-content p {
+    font-size: 28px;
+  }
+
+  .close {
+    font-size: 72px;
+    right: 16px;
+    top: 16px;
+  }
+
+  /* Contact Form */
+  .modal__contact form {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .modal__contact input,
+  .modal__contact textarea {
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+  }
+
+  .modal__contact button {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  /* Weather specific improvements */
+  .weather__result .unit__toggle {
+    width: auto;
+    min-width: 200px;
+    padding: 8px 16px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .weather__result .close-weather {
+    width: auto;
+    min-width: 200px;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 24px;
+    order: 20;
+  }
+
+  /* Reorder content for mobile */
+  .weather__content {
+    display: flex;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 0 16px;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* Set order for elements in weather content */
+  .weather__content h3 {
+    order: 1;
+  }
+
+  .weather__content .tab-content {
+    order: 2;
+  }
+
+  .weather__content .tabs {
+    order: 3;
+    margin-top: 20px;
+  }
+
+  .weather__content .close-weather {
+    order: 4;
+    margin-top: 20px;
+  }
+
+  /* Override any conflicting styles */
+  .weather__content > * {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Force the tabs to be vertical and styled like buttons */
+  .weather__content .tabs {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    gap: 10px !important;
+    margin: 20px 0 !important;
+  }
+
+  .weather__content .tab {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    padding: 12px 16px !important;
+    background-color: #3c4aeb !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .weather__content .tab.active {
+    background-color: #2980b9 !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .weather-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
+}
+
+/* Smaller Mobile Screens */
+@media (max-width: 480px) {
+  #headerTitle {
+    font-size: 24px;
+  }
+
+  .search__wrapper h2 {
+    font-size: 24px;
+  }
+
+  .modal-content {
+    padding: 40px 16px;
+  }
+
+  .modal-content p {
+    font-size: 18px;
+  }
+
+  .weather__result h3 {
+    font-size: 26px;
+  }
+
+  .weather__result p {
+    font-size: 16px;
+  }
+
+  .weather__result button {
+    font-size: 16px;
+  }
+
+  .nav__link {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal-content {
+    padding: 32px 12px;
+  }
+
+  .weather__result h3 {
+    font-size: 22px;
+  }
+
+  .weather__result p {
+    font-size: 14px;
+  }
+
+  .tab {
+    flex: 1 1 100%;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

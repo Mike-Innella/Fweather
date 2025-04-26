@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Test</title>
+    <link rel="stylesheet" href="src/Styling/Global.css">
+    <link rel="stylesheet" href="src/Styling/Search.css">
+    <link rel="stylesheet" href="src/Styling/Weather.css">
+    <link rel="stylesheet" href="src/Styling/Tabs.css">
+    <link rel="stylesheet" href="src/Styling/Footer.css">
+    <link rel="stylesheet" href="src/Styling/Modals.css">
+    <link rel="stylesheet" href="src/Styling/AutoLocate.css">
+    <link rel="stylesheet" href="src/Styling/Header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <img src="src/assets/Logo Black.PNG" alt="Fweather Logo" class="logo">
+            </div>
+            <div class="header__title">
+                <h1>Fweather</h1>
+            </div>
+
+            <nav class="nav">
+                <div id="navList">
+                    <ul class="nav__list">
+                        <li class="nav__link">About</li>
+                        <li class="nav__link">Contact Us</li>
+                    </ul>
+
+                    <button class="contrast" title="Toggle Dark Mode">
+                        <i class="fa fa-adjust"></i>
+                    </button>
+
+                    <button class="burgerBtn" title="Open Menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="search-section" id="section">
+        <div class="container">
+            <div class="row">
+                <div class="search__wrapper" id="searchWrapper">
+                    <h2>Search Your Location Here!</h2>
+
+                    <div class="search__bar">
+                        <form>
+                            <input
+                                type="text"
+                                placeholder="Enter a location"
+                                required
+                            />
+                            <button class="search__submit" type="submit" title="Search">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="locate__wrap">
+        <button class="autoLocateBtn">
+            <i class="fa fa-crosshairs"></i>
+            <span class="locate__text">Use your location</span>
+        </button>
+    </div>
+
+    <div class="weather__result bg-clear">
+        <div class="weather__content">
+            <h3>Weather in New York</h3>
+            <div class="tabs">
+                <button class="tab active">Current Weather</button>
+                <button class="tab">Sunrise & Sunset</button>
+                <button class="tab">Fun Fact</button>
+            </div>
+            <div class="tab-content">
+                <div class="tabs-content current">
+                    <div class="tab-content-inner">
+                        <p>🌡️ Temperature: 25.5°C</p>
+                        <p>
+                            <img 
+                                src="https://openweathermap.org/img/wn/01d@2x.png" 
+                                alt="Clear sky"
+                                class="weather-icon"
+                            />
+                            Condition: Clear sky
+                        </p>
+                        <p>💨 Wind Speed: 5.2 kph</p>
+                        <p>💧 Humidity: 65%</p>
+                        <p>🌡️ Feels Like: 26.2°C</p>
+                        <p>📊 Pressure: 1012 hPa</p>
+                        <p>👁️ Visibility: 10.0 km</p>
+                        <button class="unit__toggle">Switch to Imperial</button>
+                    </div>
+                </div>
+            </div>
+            <button class="close-weather">Close</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="src/assets/Logo Black.PNG" alt="Fweather Logo" class="logo">
+            </div>
+
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Fweather</h3>
+                    <p>Get accurate weather forecasts for any location worldwide.</p>
+                </div>
+
+                <div class="footer__section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2025 Fweather. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal__wrapper">
+        <div id="aboutModal" class="modal modal__about show" aria-modal="true" role="dialog">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>About Fweather</h2>
+                <p>
+                    Fweather provides accurate weather updates for locations around the
+                    world. Enter a location in the search bar or use autolocate to get started!
+                </p>
+                <div class="about-features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Search by city name or US zip code</li>
+                        <li>Auto-locate your current position</li>
+                        <li>Current weather conditions with visual indicators</li>
+                        <li>Sunrise and sunset times</li>
+                        <li>Interesting weather-related fun facts</li>
+                        <li>Dynamic backgrounds that change based on weather conditions</li>
+                    </ul>
+                </div>
+                <div class="about-developers">
+                    <h3>Development Team</h3>
+                    <p>Created by the Fweather Development Team</p>
+                    <p>Version 1.0.0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Global Stylesheet for Weather App */
+
+/* Importing Google Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Base Styles */
+* {
+  scroll-behavior: smooth;
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #4e4e4e;
+  transition: all 400ms ease;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #ede2e2;
+  padding-bottom: 200px; /* Add padding to account for fixed footer */
+}
+
+/* Layout Styles */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.row,
+.header__wrapper,
+.nav,
+.nav__list,
+#navList,
+.search__bar form {
+  display: flex;
+  align-items: center;
+}
+
+.row,
+.nav__list,
+.search__wrapper {
+  justify-content: center;
+}
+
+.row,
+.nav__list {
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+ul,
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  cursor: default;
+}
+
+/* Theme Styles */
+.dark-theme {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+.dark-theme * {
+  color: inherit;
+}
+
+.dark-theme .nav__link:hover,
+.dark-theme .contrast:hover i,
+.dark-theme .burgerBtn:hover i,
+.dark-theme .burgerClose:hover {
+  color: #eb3c3c;
+}
+
+.dark-theme .nav__link::before,
+.dark-theme .nav__link::after,
+.dark-theme .search__bar button,
+.dark-theme .modal__contact button:hover,
+.dark-theme .weather__result button {
+  background-color: #eb3c3c;
+}
+
+.dark-theme .search__bar input,
+.dark-theme .modal__contact input,
+.dark-theme .modal__contact textarea {
+  color: #eb3c3c;
+}
+
+.dark-theme .search__bar:focus-within,
+.dark-theme .modal__contact input:focus-within,
+.dark-theme .modal__contact textarea:focus-within {
+  border-color: #eb3c3c;
+}
+
+/* Header Dark Mode */
+.dark-theme .header {
+  background-color: #222;
+  box-shadow: 0 2px 5px #ffffff1a;
+}
+
+.dark-theme .header__title h1 {
+  color: #f5f5f5;
+}
+
+/* Dark Theme Modals */
+.dark-theme .modal-content {
+  background-color: #333;
+  border-color: #969696;
+}
+
+.dark-theme .modal__contact button {
+  background-color: #4e4e4e;
+  color: #f5f5f5;
+  border-color: #969696;
+}
+
+.dark-theme .close {
+  color: #f5f5f5;
+}
+
+.dark-theme .close:hover {
+  color: #eb3c3c;
+}
